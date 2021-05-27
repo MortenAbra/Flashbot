@@ -36,8 +36,7 @@ Build and run the bot.
 
 
 ## Examples
-A simple replying bot.
-Replies to user command !hello
+A simple command which replies to a user message with prefix: !hello
 ```java
 public class MyNewCommand extends Command {
   
