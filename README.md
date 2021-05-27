@@ -17,8 +17,6 @@ To add new commands do the following:
 ```java
 public class MyNewCommand extends Command {
 
-
-
   public MyNewCommand(){}
 
   @Override
