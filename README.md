@@ -5,7 +5,7 @@ FlashBot is a discord bot developed with the Java Discord Wrapper (JDA).
 ### Setup
 Create a ".env" file in the resources folder with the following tags:
 
-```
+```java
 TOKEN="Insert_Discord_Bot_token_here"
 ```
 
