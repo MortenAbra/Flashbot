@@ -17,12 +17,9 @@ To add new commands do the following:
 ```java
 public class MyNewCommand extends Command {
 
-  private IUserHandler userHandler;
 
-  public MyNewCommand(){
-    this.userHandler = getUserHandler();
-    this.setPrefix("!myPrefix");
-  }
+
+  public MyNewCommand(){}
 
   @Override
   public void handle(MessageReceivedEvent event){
