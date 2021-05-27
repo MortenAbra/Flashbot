@@ -14,7 +14,7 @@ The FlashBot is developed with extendability in mind.
 By utilizing the Java ServiceProvider we enable new custom Commands.
 
 To add new commands do the following:
-```
+```java
 public class MyNewCommand extends Command {
 
   private IUserHandler userHandler;
@@ -33,7 +33,7 @@ public class MyNewCommand extends Command {
 
 Afterwards, add the command as a service in the "META-INF/services/commands.Command"
 
-```
+```java
 commands.MyNewCommand
 ```
 
