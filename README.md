@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+## Welcome to FlashBot
 
-You can use the [editor on GitHub](https://github.com/MortenAbra/Flashbot/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+FlashBot is a discord bot developed with the Java Discord Wrapper (JDA).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Setup
+Create a ".env" file with the following tags:
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+TOKEN="Insert_Discord_Bot_token_here"
+´´´
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Extendability
+The FlashBot is developed with extendability in mind. 
+By utilizing the Java ServiceProvider we enable new custom Commands.
 
-### Jekyll Themes
+To add new commands do the following:
+```
+public class MyNewCommand extends Command {
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MortenAbra/Flashbot/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  private IUserHandler userHandler;
 
-### Support or Contact
+  public MyNewCommand(){
+    this.userHandler = getUserHandler();
+    this.setPrefix("!myPrefix");
+  }
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+  @Override
+  public void handle(MessageReceivedEvent event){
+    //Perform your command
+  }  
+}
+
+´´´
+
+Afterwards, add the command as a service in the "META-INF/services/commands.Command"
+
+```
+commands.MyNewCommand
+´´´
+
+Build and run the bot.
