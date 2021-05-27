@@ -33,3 +33,30 @@ commands.MyNewCommand
 ```
 
 Build and run the bot.
+
+
+## Examples
+```java
+public class MyNewCommand extends Command {
+  
+  private MessageChannel channel;
+  private String prefix;
+
+  public MyNewCommand(){
+    this.prefix = "!hello";
+  }
+
+  @Override
+  public void handle(MessageReceivedEvent event){
+    this.channel = event.getChannel();
+    if(event.getMessage().getContentRaw().startsWith(prefix)){
+      channel.sendMessage("Hello:" + event.getAuthor().getAsMention()).queue();
+    }
+  }  
+}
+```
+Following example will reply with:
+```
+ExampleUser message: !hello
+Bot reply: Hello ExampleUser
+```
