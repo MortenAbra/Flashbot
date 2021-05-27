@@ -1,0 +1,7 @@
+commands.TotalFlashCoins
+commands.RemoveCoins
+commands.NewFlashboi
+commands.FlashUserCoins
+commands.AddCoins
+commands.AllFlashbois
+commands.NewFlashboiTrial
