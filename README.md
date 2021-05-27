@@ -36,6 +36,8 @@ Build and run the bot.
 
 
 ## Examples
+A simple replying bot.
+Replies to user command !hello
 ```java
 public class MyNewCommand extends Command {
   
